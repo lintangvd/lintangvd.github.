@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css">
+	
+</head>
+<body>
+	<div class="header">
+			<h1>HOUSE OF A.R.M.Y</h1>
+			<h3>Adorable Representative M.C for Youth</h3>
+			<p>========Fandom of 방탄소년단========</p>
+	</div>
+			<!-- Slide Show -->
+	
+	<div class="container" id="slider-utama">
+	<div class="slider-wrapper">
+		<img src="bangtan/img1.jpg" class="slide" />
+		<img src="bangtan/img2.jpg" class="slide" />
+		<img src="bangtan/img3.jpg" class="slide" />
+		<img src="bangtan/img4.jpg" class="slide" />
+		<img src="bangtan/img5.jpg"  class="slide" />
+		<img src="bangtan/img6.jpg"  class="slide" />
+	</div>
+
+			<!-- Menu -->
+	<div class="menu">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="member.html">Member</a></li>
+			<li><a href="album.html">Album</a></li>
+			<li><a href="merchandise.html">Merchandise</a></li>
+			<li><a href="contact.html">About Us</a></li>	
+		</ul>
+  </div>
+				<!-- Sidebar -->
+<div id="sidebar">
+		<div class="widget">
+			<img src="bangtan/bts.gif" alt="" class="gambariklan">
+		</div>
+		<div class="widged">
+				<h3 align="center">MOST POPULER</h3>
+				<ul>
+					<li><a href="pegunungan/kaliademi.html">MAP OF THE SOUL</a></li>
+					<li><a href="#parangtritis">LIGHTSTICK VER.3"</a></li>
+					<li><a href="https://www.vlive.tv/video/159094?channelCode=FE619" >RUN BTS</a></li>
+					<li><a href="https://www.youtube.com/user/BANGTANTV"" >BANGTAN TV</a></li>
+				</ul>
+			</div>
+			<div class="widget">
+					<img src="bangtan/bts1.gif" alt="" class="gambariklan">
+				</div>
+			<div class="widged">
+					<h3 align="center">SONG POPULER</h3>
+					<ul>
+						<li><a href="https://www.youtube.com/watch?v=XsX3ATc3FbA">Boy With Luv</a></li>
+						<li><a href="https://www.youtube.com/watch?v=pBuZEGYXA6E">IDOL</a></li>
+						<li><a href="https://www.youtube.com/watch?v=hmE9f-TEutc">Blood Sweet and Tears</a></li>
+						<li><a data-scroll href="https://www.youtube.com/watch?v=MBdVXkSdhwU" >DNA</a></li>
+					</ul>
+				</div>
+</div>
+
+<div id="isiposting">
+	<div class="isipostingprof">
+			<center>
+		<img src="fotoku.jpg" alt="" class="gambardepan">
+
+		<br>
+		<h2>안녕하세요</h2><br>
+		<p>
+				Nama saya Lintang Pangestika<br>
+				Asal saya dari Bekasi<br>
+				Saya sedang menempuh kuliah di Yogyakarta<br>
+				Sudah menjadi army sebaai pengagum dari BTS sekitar 2tahun <br> 
+		</p>
+		<p>Menurut saya BTS membawa pengaruh positif dalam hidup saya , bisa memberi semangat untuk menjalani sulitnya kehidupan, 
+		melihat perjuangan dan usaha dari mereka hingga jadi bintang besar di seluruh penjuru dunia , membuat saya ingin terus melangkah mengejar apa 
+		yang saya inginkan. 
+		Dari lagu-lagu mereka yang sangat bagus dan memiliki arti yang mendalam, membuat saya termotivasi.
+
+		</p>
+		<p>Saya membuat website ini untuk pada army yanga da di Indonesia ,
+			dengan ini bisa memudahkan para army baru untuk mengetahui seputar BTS.
+			Dan saya berterimakasih kepada Bangtan karena sudah ada dihidup saya , 
+			BORAHAE!!!!
+			Terimakasih Sudah Berkunjung :) 
+		</p>
+		</center>
+		<br>
+		</div>
+	</div>
+
+	<div id="footer">
+		&copy 2019, By Lintang Pangestika
+	</div>
+</div>
+<script type="text/javascript">
+		(function() {
+	
+	function Slideshow( element ) {
+		this.el = document.querySelector( element );
+		this.init();
+	}
+	
+	Slideshow.prototype = {
+		init: function() {
+			this.wrapper = this.el.querySelector( ".slider-wrapper" );
+			this.slides = this.el.querySelectorAll( ".slide" );
+			this.index = 0;
+			this.total = this.slides.length;
+			this.timer = null;
+			
+			this.action();
+			this.stopStart();	
+		},
+		_slideTo: function( slide ) {
+			var currentSlide = this.slides[slide];
+			currentSlide.style.opacity = 1;
+			
+			for( var i = 0; i < this.slides.length; i++ ) {
+				var slide = this.slides[i];
+				if( slide !== currentSlide ) {
+					slide.style.opacity = 0;
+				}
+			}
+		},
+		action: function() {
+			var self = this;
+			self.timer = setInterval(function() {
+				self.index++;
+				if( self.index == self.slides.length ) {
+					self.index = 0;
+				}
+				self._slideTo( self.index );
+				
+			}, 3000);
+		},
+		stopStart: function() {
+			var self = this;
+			self.el.addEventListener( "mouseover", function() {
+				clearInterval( self.timer );
+				self.timer = null;
+				
+			}, false);
+			self.el.addEventListener( "mouseout", function() {
+				self.action();
+				
+			}, false);
+		}
+		
+		
+	};
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		
+		var slider = new Slideshow( "#slider-utama" );
+		
+	});
+	
+	
+})();
+ 
+	</script>
+</body>
+</html>

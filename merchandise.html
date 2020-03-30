@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+	</style>
+</head>
+<body>
+	<div class="header">
+			<h1>HOUSE OF A.R.M.Y</h1>
+			<h3>Adorable Representative M.C for Youth</h3>
+			<p>========Fandom of 방탄소년단========</p>
+	</div>
+			<!-- Slide Show -->
+	
+	<div class="container" id="slider-utama">
+	<div class="slider-wrapper">
+		<img src="bangtan/img1.jpg" class="slide" />
+		<img src="bangtan/img2.jpg" class="slide" />
+		<img src="bangtan/img3.jpg" class="slide" />
+		<img src="bangtan/img4.jpg" class="slide" />
+		<img src="bangtan/img5.jpg"  class="slide" />
+		<img src="bangtan/img6.jpg"  class="slide" />
+	</div>
+
+			<!-- Menu -->
+	<div class="menu">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="member.html">Member</a></li>
+			<li><a href="album.html">Album</a></li>
+			<li><a href="merchandise.html">Merchandise</a></li>
+			<li><a href="contact.html">About Us</a></li>	
+		</ul>
+  </div>
+
+					<!-- Sidebar -->
+<div id="sidebar">
+		<div class="widget">
+			<img src="merch/armybomb1.gif" alt="" class="gambariklan">
+		</div>
+		<div class="widged">
+				<h3 align="center">MOST POPULER</h3>
+				<ul>
+					<li><a href="album.html">MAP OF THE SOUL</a></li>
+					<li><a href="merchandise.html">LIGHTSTICK VER.3"</a></li>
+					<li><a href="https://www.vlive.tv/video/159094?channelCode=FE619" >RUN BTS</a></li>
+					<li><a href="https://www.youtube.com/user/BANGTANTV"" >BANGTAN TV</a></li>
+				</ul>
+			</div>
+		
+			<div class="widged">
+					<h3 align="center">SONG POPULER</h3>
+					<ul>
+						<li><a href="https://www.youtube.com/watch?v=XsX3ATc3FbA">Boy With Luv</a></li>
+						<li><a href="https://www.youtube.com/watch?v=pBuZEGYXA6E">IDOL</a></li>
+						<li><a href="https://www.youtube.com/watch?v=hmE9f-TEutc">Blood Sweet and Tears</a></li>
+						<li><a data-scroll href="https://www.youtube.com/watch?v=MBdVXkSdhwU" >DNA</a></li>
+					</ul>
+				</div>
+</div>
+				<!-- isi Postingan -->
+<div id="isipostingmerch">
+		<div class="isipostingmerch">
+			<img src="merch/img1.png" alt="" class="gambardepan">
+			<h1>Lightstik Official Ver.3</h1>
+			<br>
+			<p>
+					Lightsick terbaru BTS yang dinamai Army Bomb versi 3 membuat penggemar heboh.
+					Terlebih, lightstick terbaru ini dilengkapi beberapa fungsi tambahan yang ciamik.
+					Di antaranya adalah kemampuan kontrol wireless, refleksi cahaya, dan beberapa fitur lainnya.
+					Untuk versi 3 ini, Army Bom memiliki lampu di tengahnya yang berbentuk logo BTS.
+					Menariknya, baru-baru ini, ARMY mendapati adanya aplikasi pengontrol lampu warna untuk 
+					lightstick yang resmi dirilis 9 Agustus 2018 lalu ini.
+					
+				</p>
+				<br>
+				<br>
+                <br>
+				<h2 align="center"  >Gallery Ocean Bomb</h2><br>
+				
+				   <img src="merch/ocean.jpg" class=foto><img src="merch/oceanbomb.jpeg " class=foto><img src="merch/ocean2.jpg"class="foto">
+				   <img src="merch/ocean3.jpg" class=foto><img src="merch/ocean5.jpg" class=foto><img src="merch/ocean4.jpg" class=foto>
+		</div>
+	</div>
+	
+	<div id="footer">
+		&copy 2019, By LintangPangestika
+	</div>
+</div>
+<script type="text/javascript">
+		(function() {
+	function Slideshow( element ) {
+		this.el = document.querySelector( element );
+		this.init();
+	}
+	Slideshow.prototype = {
+		init: function() {
+			this.wrapper = this.el.querySelector( ".slider-wrapper" );
+			this.slides = this.el.querySelectorAll( ".slide" );
+			this.index = 0;
+			this.total = this.slides.length;
+			this.timer = null;
+			this.action();
+			this.stopStart();	
+		},
+		_slideTo: function( slide ) {
+			var currentSlide = this.slides[slide];
+			currentSlide.style.opacity = 1;
+			for( var i = 0; i < this.slides.length; i++ ) {
+				var slide = this.slides[i];
+				if( slide !== currentSlide ) {
+					slide.style.opacity = 0;
+				}
+			}
+		},
+		action: function() {
+			var self = this;
+			self.timer = setInterval(function() {
+				self.index++;
+				if( self.index == self.slides.length ) {
+					self.index = 0;
+				}
+				self._slideTo( self.index );
+			}, 3000);
+		},
+		stopStart: function() {
+			var self = this;
+			self.el.addEventListener( "mouseover", function() {
+				clearInterval( self.timer );
+				self.timer = null;
+			}, false);
+			self.el.addEventListener( "mouseout", function() {
+				self.action();		
+			}, false);
+		}	
+	};
+	document.addEventListener( "DOMContentLoaded", function() {
+		var slider = new Slideshow( "#slider-utama" );
+	});
+})();
+	</script>
+</body>
+</html>
